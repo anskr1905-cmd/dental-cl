@@ -1,0 +1,956 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>General Dentistry Local North | Dental</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1e2a41;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+            width: 100%;
+        }
+        /* Header & top bar */
+        .top-bar {
+            background-color: #004080;
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .phone-hl {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 13px;
+        }
+        .phone-hl i {
+            margin-right: 4px;
+        }
+        .cta-small {
+            background-color: #ffb700;
+            color: #1e2a41;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        /* Main navigation */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #004080;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #00a3b2;
+        }
+        .nav-links {
+            display: none;
+        }
+        /* Mobile menu icon - simple */
+        .mobile-menu-icon {
+            display: block;
+            font-size: 24px;
+            color: #004080;
+        }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #004080;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #002b5c;
+        }
+        .btn-block {
+            width: 100%;
+            text-align: center;
+        }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(145deg, #f0f7fc 0%, #e6f0f9 100%);
+            border-radius: 20px;
+            padding: 24px 16px;
+            margin: 16px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .hero-content {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        .hero-badge {
+            background-color: #ffb700;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: #002b5c;
+        }
+        .hero h1 span {
+            color: #00a3b2;
+            display: block;
+            font-size: 34px;
+        }
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .feature-chip {
+            background: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .offer-tag {
+            background: #e03a3a;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-block;
+        }
+        /* Form Card - Made mobile friendly */
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px 16px;
+            box-shadow: 0 10px 30px rgba(0,64,128,0.1);
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            border: 1px solid #e0f0ff;
+        }
+        .form-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #004080;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d9e2ec;
+            border-radius: 40px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus {
+            border-color: #004080;
+            box-shadow: 0 0 0 3px rgba(0,64,128,0.1);
+        }
+        .phone-input-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #d9e2ec;
+            border-radius: 40px;
+            background: white;
+        }
+        .phone-prefix {
+            padding: 14px 8px 14px 16px;
+            background: transparent;
+            font-weight: 600;
+            color: #1e2a41;
+            border-right: 1px solid #d9e2ec;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .phone-input-container input {
+            border: none;
+            flex: 1;
+            padding: 14px 16px 14px 10px;
+            border-radius: 40px;
+            width: 100%;
+            min-width: 0; /* Prevents overflow on mobile */
+        }
+        .small-note {
+            font-size: 12px;
+            color: #5e6f8c;
+            margin-top: 16px;
+            text-align: center;
+        }
+        /* Custom Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+        .popup-content {
+            background: white;
+            padding: 32px 20px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 90%;
+            width: 350px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: popupFadeIn 0.3s ease;
+        }
+        @keyframes popupFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .popup-content i {
+            font-size: 60px;
+            color: #00a3b2;
+            margin-bottom: 16px;
+        }
+        .popup-content h2 {
+            font-size: 28px;
+            color: #004080;
+            margin-bottom: 12px;
+        }
+        .popup-content p {
+            font-size: 16px;
+            color: #1e2a41;
+            margin-bottom: 20px;
+        }
+        .popup-content button {
+            background: #004080;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            width: auto;
+            min-width: 120px;
+        }
+        .popup-content button:hover {
+            background: #002b5c;
+        }
+        /* Loading spinner */
+        .fa-spinner {
+            margin-left: 8px;
+        }
+        /* Doctor message - mobile optimized */
+        .doctor-message {
+            display: none;
+            text-align: center;
+            padding: 16px;
+            background: #e6f3ff;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid #004080;
+        }
+        .doctor-avatar {
+            width: 50px;
+            height: 50px;
+            background: #004080;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: white;
+            font-size: 24px;
+        }
+        .doctor-message p {
+            color: #004080;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 6px 0;
+        }
+        .doctor-sign {
+            font-style: italic;
+            color: #666;
+            font-size: 13px;
+            margin-top: 8px;
+            border-top: 1px dashed #004080;
+            padding-top: 8px;
+        }
+        /* Service Grid - Mobile optimized */
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #002b5c;
+            text-align: center;
+        }
+        .section-sub {
+            font-size: 16px;
+            color: #3a546d;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 30px 0;
+        }
+        .service-card {
+            background: #f9fcff;
+            padding: 20px 10px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #eaf0f6;
+            transition: 0.2s;
+        }
+        .service-card i {
+            font-size: 30px;
+            color: #004080;
+            margin-bottom: 10px;
+        }
+        .service-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        /* City Grid - Mobile optimized */
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            background: #f3f9ff;
+            padding: 20px;
+            border-radius: 24px;
+            margin: 30px 0;
+        }
+        .city-item {
+            background: white;
+            padding: 14px 8px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+        }
+        .city-item span {
+            display: block;
+            font-size: 12px;
+            color: #004080;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        /* Reviews - Mobile optimized */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 30px 0;
+        }
+        .review-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e2edf2;
+        }
+        .stars {
+            color: #ffb700;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .reviewer {
+            font-weight: 700;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .review-card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        /* FAQ - Mobile optimized */
+        .faq-item {
+            border-bottom: 1px solid #d0dfeb;
+            padding: 16px 0;
+        }
+        .faq-question {
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question i {
+            font-size: 14px;
+        }
+        .faq-item p {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        /* Google reviews summary - mobile */
+        .reviews-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            background: #fbfefe;
+            padding: 24px;
+            border-radius: 32px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .rating-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .rating-number {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .rating-stars {
+            display: flex;
+            gap: 4px;
+            color: #ffb700;
+            font-size: 18px;
+        }
+        .rating-text {
+            font-size: 14px;
+            color: #3a546d;
+        }
+        .patients-badge {
+            background: #eef6fb;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        /* Footer - Mobile optimized */
+        .footer {
+            background: #002b5c;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col {
+            text-align: center;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+        .footer-col a {
+            color: #cbd5e6;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .footer-col a:hover {
+            color: white;
+        }
+        .phone-footer {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 12px 0;
+        }
+        .footer-copyright {
+            border-top: 1px solid #1e4a7a;
+            padding-top: 20px;
+            color: #adc4db;
+            text-align: center;
+            font-size: 13px;
+        }
+        /* Emergency offer row */
+        .offer-row {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .emi-text {
+            font-weight: 800;
+            font-size: 22px;
+        }
+        .location-text {
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        /* Form container adjustments */
+        #formContainer {
+            width: 100%;
+        }
+        /* Touch-friendly inputs */
+        input, button {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Small screens optimization */
+        @media (min-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero h1 span {
+                font-size: 38px;
+            }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .city-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero {
+                flex-direction: row;
+                padding: 40px;
+            }
+            .hero-content {
+                width: 55%;
+                margin-bottom: 0;
+            }
+            .form-card {
+                max-width: 380px;
+                margin-left: auto;
+            }
+            .nav-links {
+                display: flex;
+                gap: 24px;
+            }
+            .mobile-menu-icon {
+                display: none;
+            }
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .city-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-links {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .offer-row {
+                flex-direction: row;
+                align-items: center;
+            }
+            .reviews-summary {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .rating-box {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top contact bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="phone-hl">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="cta-small">
+                <i class="fas fa-calendar-check"></i> Emergency: 
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="main-nav">
+            <div class="logo-area">
+                <div class="logo">Dental<span>Clinic</span></div>
+            </div>
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION with Form -->
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-tooth"></i> All Dental Treatments</span>
+                <h1>UNDER ONE ROOF! <span>GENERAL DENTISTRY</span></h1>
+                <div class="hero-features">
+                    <span class="feature-chip"><i class="fas fa-bolt"></i> RCT</span>
+                    <span class="feature-chip"><i class="fas fa-light-emergency"></i> Laser</span>
+                    <span class="feature-chip"><i class="fas fa-teeth"></i> Extraction</span>
+                    <span class="feature-chip"><i class="fas fa-crown"></i> Crowns</span>
+                </div>
+                <div class="offer-row">
+                    <span class="emi-text">NO COST EMI</span>
+                    <span class="offer-tag">UPTO 20% OFF*</span>
+                </div>
+                <div class="location-text"><i class="fas fa-map-pin"></i> Available across all clinics</div>
+            </div>
+            
+            <!-- FORM CONTAINER - Mobile optimized frame -->
+            <div class="form-card" id="formContainer">
+                <div id="formSection">
+                    <h3>Book Your Appointment</h3>
+                    <!-- Doctor message -->
+                    <div id="doctorMessage" class="doctor-message">
+                        <div class="doctor-avatar">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <p>✓ Your appointment request has been received!</p>
+                        <p><strong>Book another Appointment</strong></p>
+                    </div>
+                    <form id="appointmentForm">
+                        <!-- Web3Forms Public Access Key -->
+                        <input type="hidden" id="accessKey" value="bbc68695-ea6a-4a7d-86b7-987602ea7eaf">
+                        
+                        <!-- ONLY TWO FIELDS: Name and Phone -->
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="phone-input-container">
+                                <span class="phone-prefix">+91</span>
+                                <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Honeypot spam protection -->
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                        
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            Book Appointment <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="small-note">
+                            <i class="fas fa-shield-alt"></i> Free consultation • No spam
+                        </div>
+                    </form>
+                    
+                    <div style="margin-top:20px; font-size:14px; color:#1e2a41; border-top:1px solid #e2edf2; padding-top:16px; text-align:center;">
+                        <i class="fas fa-phone-square" style="color:#004080;"></i> 
+                        <strong style="font-size:16px;"></strong>
+                        <span style="display:block; font-size:12px; color:#5e6f8c; margin-top:4px;">24/7 Appointment Helpline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Popup for Thank You Message -->
+    <div class="popup-overlay" id="thankyouPopup">
+        <div class="popup-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Thank you</h2>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Key Treatment Services -->
+    <div class="container">
+        <h2 class="section-title">Our Key Treatment Services</h2>
+        <div class="section-sub">Top Treatments for a Healthier Smile</div>
+        <div class="service-grid">
+            <div class="service-card"><i class="fas fa-teeth-open"></i><h4>Dental Implants</h4></div>
+            <div class="service-card"><i class="fas fa-align-left"></i><h4>Invisalign</h4></div>
+            <div class="service-card"><i class="fas fa-smile"></i><h4>Full Mouth Rehab</h4></div>
+            <div class="service-card"><i class="fas fa-grin-stars"></i><h4>Smile Makeovers</h4></div>
+            <div class="service-card"><i class="fas fa-bolt"></i><h4>Root Canal</h4></div>
+            <div class="service-card"><i class="fas fa-crown"></i><h4>Crowns & Veneers</h4></div>
+        </div>
+    </div>
+
+    <!-- Google reviews summary -->
+    <div class="container">
+        <div class="reviews-summary">
+            <div>
+                <h2 style="font-size: 28px; margin-bottom: 8px;">Google Reviews</h2>
+                <div class="rating-box">
+                    <span class="rating-number">4.9</span>
+                    <div>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="rating-text">Average rating of 4.9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="patients-badge">
+                <i class="fas fa-check-circle" style="color:#00a3b2;"></i> 3 Million+ Happy Patients
+            </div>
+        </div>
+        
+        <!-- Reviews grid -->
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"I had my upper incisor tooth filling and the results are excellent. Thank you Dr.Rashmi."</p>
+                <div class="reviewer">– Pooja Gowda</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Most hygienic clinic. Dr.Naveen treated my complex filling, painless."</p>
+                <div class="reviewer">– Mubeen Ahmed</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Dr Tejaswini did painless filling. Thanks to the team."</p>
+                <div class="reviewer">– Shaik Althaf</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinics across India -->
+    <div class="container">
+        <h2 class="section-title">Find Us Across India</h2>
+        <div class="section-sub">600+ clinics • 23 cities</div>
+        <div class="city-grid">
+            <div class="city-item">Delhi/NCR <span>190 Clinics</span></div>
+            <div class="city-item">Punjab <span>27 Clinics</span></div>
+            <div class="city-item">Bengaluru <span>110 Clinics</span></div>
+            <div class="city-item">Chennai <span>59 Clinics</span></div>
+            <div class="city-item">Hyderabad <span>76 Clinics</span></div>
+            <div class="city-item">Mumbai <span>40 Clinics</span></div>
+            <div class="city-item">Pune <span>76 Clinics</span></div>
+            <div class="city-item">Ahmedabad <span>27 Clinics</span></div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container" style="margin-top: 40px;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question">How can I book an appointment? <i class="fas fa-chevron-down"></i></div>
+                <p style="color: #3e5a70;">Fill the form above, or call us directly on <strong></strong></p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are your clinic timings? <i class="fas fa-chevron-down"></i></div>
+                <p style="color: #3e5a70;">10 AM to 7 PM every day, including weekends.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What safety measures do you follow? <i class="fas fa-chevron-down"></i></div>
+                <p style="color: #3e5a70;">10x Safety, 4-step sterilization, Aerosol suction, WHO protocols.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Dental clinic</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#">General Dentistry</a>
+                    <a href="#">Implants</a>
+                    <a href="#">Orthodontics</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="phone-footer">+91 98765 43210</div>
+                    <p style="color:#cbd5e6;">care@dental.example</p>
+                    <p style="color:#cbd5e6;">600+ clinics across India</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Dental clinic. All rights reserved. | <a href="privacy.html" style="color:#adc4db;">Privacy</a> | <a href="terms.html" style="color:#adc4db;">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Submission with Doctor Message -->
+    <script>
+        // ===== CONFIGURATION =====
+        const WEB3FORMS_ACCESS_KEY = 'bbc68695-ea6a-4a7d-86b7-987602ea7eaf';
+        // =========================
+        
+        // DOM Elements
+        const appointmentForm = document.getElementById('appointmentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const doctorMessage = document.getElementById('doctorMessage');
+        
+        // Handle form submission
+        appointmentForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // STOP default form submission
+            
+            // Get form values
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            
+            // Basic validation
+            if (!name) {
+                alert('Please enter your name');
+                nameInput.focus();
+                return;
+            }
+            
+            if (!phone) {
+                alert('Please enter your phone number');
+                phoneInput.focus();
+                return;
+            }
+            
+            // Validate phone number
+            if (phone.length < 10) {
+                alert('Please enter a valid 10-digit phone number');
+                phoneInput.focus();
+                return;
+            }
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            
+            // Prepare data for Web3Forms
+            const formData = {
+                access_key: WEB3FORMS_ACCESS_KEY,
+                name: name,
+                phone: '+91' + phone,
+                subject: 'New Appointment Request - Local North (Name & Phone Only)',
+                botcheck: ''
+            };
+            
+            try {
+                // Send data to Web3Forms API
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show doctor message
+                    doctorMessage.style.display = 'block';
+                    
+                    // Clear the form
+                    nameInput.value = '';
+                    phoneInput.value = '';
+                    
+                    // Hide doctor message after 5 seconds
+                    setTimeout(() => {
+                        doctorMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Submission failed: ' + (result.message || 'Please try again'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Network error. Please check your connection');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Book Appointment <i class="fas fa-arrow-right"></i>';
+            }
+        });
+        
+        // Close popup function (kept for compatibility)
+        window.closePopup = function() {
+            document.getElementById('thankyouPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
